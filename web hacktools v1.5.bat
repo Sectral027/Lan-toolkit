@@ -7,7 +7,7 @@ echo =          menu          =
 echo ==========================
 echo 1 desconectar de red
 echo 2 conectar a red
-echo 3 ver direccion IP
+echo 3 ver direccion IP y MAC
 echo 4 ping
 echo 5 traceroute
 echo 6 correo electronico falso
@@ -44,9 +44,11 @@ cls
 echo ============================
 echo 1 ver mi IP
 echo 2 averiguar IP de pagina web
+echo 3 ver mi MAC
 echo ============================
 set /p iptool=selecciona herramienta=
 if "%iptool%"== "2" goto webIP
+if "%iptool%"== "3" goto webMAC
 cls
 ipconfig
 pause
@@ -58,6 +60,11 @@ echo nslookup www.google.com
 set /p ejecutar=introduzca nslookup (url)=
 cls
 %ejecutar%
+pause
+goto inicio
+:webmac
+cls
+getmac
 pause
 goto inicio
 
