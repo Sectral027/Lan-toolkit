@@ -170,11 +170,10 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 2.3
+echo      novedades v 2.4
 echo =======================
-echo Se ha eliminado las funciones
-echo de rastreo de ip y url debido
-echo a que no eran precisas
+echo Se ha resuelto un bug en
+echo el apartado reportar bugs
 echo =======================
 pause
 goto inicio
@@ -190,3 +189,5 @@ echo https://discord.gg/dGBM3a7
 echo ===========================
 echo Alli tambien puedes encontrar versiones superiores
 echo de este programa y otros programas
+pause
+goto inicio
