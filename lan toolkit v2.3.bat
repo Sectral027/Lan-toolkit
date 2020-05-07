@@ -1,7 +1,7 @@
 @echo off
 color 0a
 :inicio
-title web hacktools v2.2
+title web hacktools v2.3
 cls
 echo ==========================
 echo =          menu          =
@@ -62,14 +62,11 @@ echo ============================
 echo 1 ver mi IP
 echo 2 averiguar IP de pagina web
 echo 3 ver mi MAC
-echo 4 rastrear pagina web
-echo 5 rastrear direccion IP
 echo ============================
 set /p iptool=selecciona herramienta=
 if "%iptool%"== "2" goto webip
 if "%iptool%"== "3" goto mimac
-if "%iptool%"== "4" goto web tracker
-if "%iptool%"== "5" goto ip tracker
+
 title ver mi ip
 cls
 ipconfig
@@ -91,20 +88,7 @@ cls
 getmac
 pause
 goto inicio
-:web tracker
-title localizador de url
-cls
-set /p track=introduce el enlace=
-goto track
-:ip tracker
-title localizador de ip
-cls
-set /p track= introduce la direccion IP=
-goto tracker
-:tracker
-start https://www.elhacker.net/geolocalizacion.html?host=%track%
-pause
-goto inicio
+
 
 :4
 title latencia y perdida de paquetes
@@ -186,10 +170,11 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 2.2
+echo      novedades v 2.3
 echo =======================
-echo Se ha incluido el acceso
-echo a la tabla arp de la red
+echo Se ha eliminado las funciones
+echo de rastreo de ip y url debido
+echo a que no eran precisas
 echo =======================
 pause
 goto inicio
@@ -204,4 +189,4 @@ echo ===========================
 echo https://discord.gg/dGBM3a7
 echo ===========================
 echo Alli tambien puedes encontrar versiones superiores
-echo de este programa
+echo de este programa y otros programas
