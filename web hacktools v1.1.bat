@@ -9,6 +9,7 @@ echo 1 desconectar de red
 echo 2 conectar a red
 echo 3 ver direccion IP
 echo 4 ping
+echo 5 traceroute
 echo ====================
 echo introduce cualquier otro boton para salir
 set /p accion=accion a selecionar=
@@ -16,6 +17,7 @@ if "%accion%"== "1" goto 1
 if "%accion%"== "2" goto 2
 if "%accion%"== "3" goto 3
 if "%accion%"== "4" goto 4
+if "%accion%"== "5" goto 5
 exit
 :1
 cls
@@ -62,6 +64,17 @@ cls
 echo ejemplo
 echo ping 192.168.1.1
 set /p ejecutar=introduzca ping (direccion ip)=
+cls
+%ejecutar%
+pause
+goto inicio
+
+:5
+cls
+echo ejemplos
+echo tracert 192.168.1.1
+echo tracert www.google.com
+set /p ejecutar=introduzca tracert (url o IP)=
 cls
 %ejecutar%
 pause
