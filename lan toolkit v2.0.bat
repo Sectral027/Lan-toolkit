@@ -1,7 +1,7 @@
 @echo off
 color 0a
 :inicio
-title web hacktools v1.9
+title web hacktools v2
 cls
 echo ==========================
 echo =          menu          =
@@ -12,9 +12,11 @@ echo 3 herramientas de IP y MAC
 echo 4 ping y perdida de paquetes
 echo 5 traceroute
 echo 6 correo electronico falso
-echo 7 salir
+echo 7 escaner de red
+echo 8 apagar equipo en red
+echo 9 salir
 echo ==========================
-echo 8 novedades de esta version
+echo 10 novedades de esta version
 echo ==========================
 set /p accion=accion a selecionar=
 if "%accion%"== "1" goto 1
@@ -23,7 +25,9 @@ if "%accion%"== "3" goto 3
 if "%accion%"== "4" goto 4
 if "%accion%"== "5" goto 5
 if "%accion%"== "6" goto no lista
-if "%accion%"== "8" goto novedades
+if "%accion%"== "7" goto 7
+if "%accion%"== "8" goto 8
+if "%accion%"== "10" goto novedades
 exit
 :1
 title desconectando
@@ -121,6 +125,42 @@ cls
 pause
 goto inicio
 
+:7
+title IMPORTANTE
+cls
+echo NOTA IMPORTANTE
+echo este escaneo solo funciona
+echo con ordenadores con windows
+echo si quiere salir reinicie el programa
+pause
+title escaneo de red
+cls
+net view
+pause
+goto inicio
+
+:8
+title INSTRUCCIONES
+cls
+echo INSTRUCCIONES
+echo tras haber completado el escaneo
+echo pulsa cualquier boton para abrir el dialogo de
+echo apagado remoto, para agregar un equipo tienes que
+echo introducir el nombre que aparece en los resultados
+echo del escaneo, el resto es pan comido
+pause
+title apagado remoto
+cls
+net view
+pause
+shutdown -i
+pause
+cls
+echo ya deberia de estar listo
+pause
+goto inicio
+
+
 :no lista
 title :(
 cls
@@ -134,11 +174,11 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 1.9
+echo      novedades v 2.0
 echo =======================
-echo Ahora el titulo va
-echo junto con la seccion
-echo del programa
+echo Se añaden las funciones de
+echo escaneo de red y apagado
+echo remoto
 echo =======================
 pause
 goto inicio
