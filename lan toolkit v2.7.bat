@@ -14,11 +14,11 @@ echo 5 traceroute
 echo 6 correo electronico falso
 echo 7 escaner de red
 echo 8 apagar equipo en red
-echo 9 tabla arp
-echo 10 salir
 echo ==========================
-echo 11 novedades de esta version
-echo 12 reportar un fallo
+echo 9 salir
+echo ==========================
+echo 10 novedades de esta version
+echo 11 reportar un fallo
 echo ==========================
 set /p accion=accion a selecionar=
 if "%accion%"== "1" goto 1
@@ -29,9 +29,8 @@ if "%accion%"== "5" goto 5
 if "%accion%"== "6" goto no lista
 if "%accion%"== "7" goto 7
 if "%accion%"== "8" goto 8
-if "%accion%"== "9" goto 9
-if "%accion%"== "11" goto novedades
-if "%accion%"== "12" goto reporte
+if "%accion%"== "10" goto novedades
+if "%accion%"== "11" goto reporte
 exit
 :1
 title desconectando
@@ -152,15 +151,6 @@ echo ya deberia de estar listo
 pause
 goto inicio
 
-:9
-title tabla arp
-cls
-echo si ves mas de un dispositivo que empiece por
-echo 192.168. es posible que le esten espiando
-arp -a
-pause
-goto inicio
-
 :no lista
 title :(
 cls
@@ -174,11 +164,13 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 2.6
+echo =   novedades v 2.7   =
 echo =======================
-echo Se ha corregido un pequeño
-echo error en la tabla arp los cuales
-echo afectan a windows 10
+echo se ha eliminado la tabla
+echo arp debido a que tiene
+echo muchas variaciones entre
+echo las distintas versiones
+echo de windows
 echo =======================
 pause
 goto inicio
