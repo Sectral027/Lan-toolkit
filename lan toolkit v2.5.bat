@@ -1,7 +1,7 @@
 @echo off
 color 0a
 :inicio
-title web hacktools v2.3
+title web hacktools v2.5
 cls
 echo ==========================
 echo =          menu          =
@@ -59,13 +59,17 @@ goto inicio
 title herramientas ip y mac
 cls
 echo ============================
+echo = herramientas de ip y mac =
+echo ============================
 echo 1 ver mi IP
 echo 2 averiguar IP de pagina web
 echo 3 ver mi MAC
+echo 4 atras
 echo ============================
 set /p iptool=selecciona herramienta=
 if "%iptool%"== "2" goto webip
 if "%iptool%"== "3" goto mimac
+if "%iptool%"== "4" goto 3
 
 title ver mi ip
 cls
@@ -81,13 +85,13 @@ set /p ejecutar=introduzca nslookup (url)=
 cls
 %ejecutar%
 pause
-goto inicio
+goto 3
 :mimac
 title ver mi mac
 cls
 getmac
 pause
-goto inicio
+goto 3
 
 
 :4
@@ -151,8 +155,8 @@ goto inicio
 :9
 title tabla arp
 cls
-echo si ves mas de un dispositivo
-echo es posible que le esten espiando
+echo si ves mas de un dispositivo que empiece por
+echo 192.168. es posible que le esten espiando
 arp -a
 pause
 goto inicio
@@ -161,8 +165,8 @@ goto inicio
 title :(
 cls
 echo esta funcion aun no esta disponible,
-echo consigue una version superior para
-echo poder usarla
+echo consigue una version superior de este
+echo programa para poder usarla
 pause
 goto inicio
 
@@ -170,10 +174,10 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 2.4
+echo      novedades v 2.5
 echo =======================
-echo Se ha resuelto un bug en
-echo el apartado reportar bugs
+echo Se han hecho ligeros cambios
+echo en la interfaz gráfica
 echo =======================
 pause
 goto inicio
