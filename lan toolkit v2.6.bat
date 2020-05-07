@@ -1,7 +1,7 @@
 @echo off
 color 0a
 :inicio
-title web hacktools v2.5
+title web hacktools v2.6
 cls
 echo ==========================
 echo =          menu          =
@@ -174,10 +174,11 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 2.5
+echo      novedades v 2.6
 echo =======================
-echo Se han hecho ligeros cambios
-echo en la interfaz gráfica
+echo Se ha corregido un pequeño
+echo error en la tabla arp los cuales
+echo afectan a windows 10
 echo =======================
 pause
 goto inicio
