@@ -2,22 +2,24 @@
 color 0a
 :inicio
 cls
-echo ====================
-echo =       menu       =
-echo ====================
+echo ==========================
+echo =          menu          =
+echo ==========================
 echo 1 desconectar de red
 echo 2 conectar a red
 echo 3 ver direccion IP
 echo 4 ping
 echo 5 traceroute
-echo ====================
-echo introduce cualquier otro boton para salir
+echo 6 correo electronico falso
+echo 7 salir
+echo ==========================
 set /p accion=accion a selecionar=
 if "%accion%"== "1" goto 1
 if "%accion%"== "2" goto 2
 if "%accion%"== "3" goto 3
 if "%accion%"== "4" goto 4
 if "%accion%"== "5" goto 5
+if "%accion%"== "6" goto no lista
 exit
 :1
 cls
@@ -77,5 +79,13 @@ echo tracert www.google.com
 set /p ejecutar=introduzca tracert (url o IP)=
 cls
 %ejecutar%
+pause
+goto inicio
+
+:no lista
+cls
+echo esta funcion aun no esta disponible,
+echo consigue una version superior para
+echo poder usarla
 pause
 goto inicio
