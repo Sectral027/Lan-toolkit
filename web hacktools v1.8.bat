@@ -13,6 +13,8 @@ echo 5 traceroute
 echo 6 correo electronico falso
 echo 7 salir
 echo ==========================
+echo 8 novedades de esta version
+echo ==========================
 set /p accion=accion a selecionar=
 if "%accion%"== "1" goto 1
 if "%accion%"== "2" goto 2
@@ -20,6 +22,7 @@ if "%accion%"== "3" goto 3
 if "%accion%"== "4" goto 4
 if "%accion%"== "5" goto 5
 if "%accion%"== "6" goto no lista
+if "%accion%"== "8" goto novedades
 exit
 :1
 cls
@@ -49,15 +52,15 @@ echo 4 rastrear pagina web
 echo 5 rastrear direccion IP
 echo ============================
 set /p iptool=selecciona herramienta=
-if "%iptool%"== "2" goto web IP
-if "%iptool%"== "3" goto web MAC
+if "%iptool%"== "2" goto webip
+if "%iptool%"== "3" goto webmac
 if "%iptool%"== "4" goto web tracker
 if "%iptool%"== "5" goto ip tracker
 cls
 ipconfig
 pause
 goto inicio
-:web IP
+:webip
 cls
 echo ejemplo
 echo nslookup www.google.com
@@ -66,7 +69,7 @@ cls
 %ejecutar%
 pause
 goto inicio
-:web MAC
+:webmac
 cls
 getmac
 pause
@@ -110,5 +113,18 @@ cls
 echo esta funcion aun no esta disponible,
 echo consigue una version superior para
 echo poder usarla
+pause
+goto inicio
+
+:novedades
+cls
+echo =======================
+echo      novedades v 1.8
+echo =======================
+echo Se ha añadido este menu
+echo y se ha solucionado un
+echo error del menu de 
+echo herramientas de IP y MAC
+echo =======================
 pause
 goto inicio
