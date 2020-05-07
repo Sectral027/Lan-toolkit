@@ -1,7 +1,7 @@
 @echo off
 color 0a
 :inicio
-title web hacktools v2
+title web hacktools v2.1
 cls
 echo ==========================
 echo =          menu          =
@@ -17,6 +17,7 @@ echo 8 apagar equipo en red
 echo 9 salir
 echo ==========================
 echo 10 novedades de esta version
+echo 11 reportar un fallo
 echo ==========================
 set /p accion=accion a selecionar=
 if "%accion%"== "1" goto 1
@@ -28,6 +29,7 @@ if "%accion%"== "6" goto no lista
 if "%accion%"== "7" goto 7
 if "%accion%"== "8" goto 8
 if "%accion%"== "10" goto novedades
+if "%accion%"== "11" goto reporte
 exit
 :1
 title desconectando
@@ -174,11 +176,22 @@ goto inicio
 title novedades
 cls
 echo =======================
-echo      novedades v 2.0
+echo      novedades v 2.1
 echo =======================
-echo Se añaden las funciones de
-echo escaneo de red y apagado
-echo remoto
+echo Ahora se puede reportar
+echo fallos mediante discord
 echo =======================
 pause
 goto inicio
+
+:reporte
+title reportar fallos
+cls
+echo para reportar un fallo avisame en
+echo mi servidor de discord, usa la siguiente
+echo invitacion para entrar, buscame como Omicron166 yt#7828
+echo ===========================
+echo https://discord.gg/dGBM3a7
+echo ===========================
+echo Alli tambien puedes encontrar versiones superiores
+echo de este programa
