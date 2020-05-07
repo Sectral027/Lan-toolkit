@@ -7,7 +7,7 @@ echo =          menu          =
 echo ==========================
 echo 1 desconectar de red
 echo 2 conectar a red
-echo 3 ver direccion IP y MAC
+echo 3 herramientas de IP y MAC
 echo 4 ping
 echo 5 traceroute
 echo 6 correo electronico falso
@@ -45,15 +45,19 @@ echo ============================
 echo 1 ver mi IP
 echo 2 averiguar IP de pagina web
 echo 3 ver mi MAC
+echo 4 rastrear pagina web
+echo 5 rastrear direccion IP
 echo ============================
 set /p iptool=selecciona herramienta=
-if "%iptool%"== "2" goto webIP
-if "%iptool%"== "3" goto webMAC
+if "%iptool%"== "2" goto web IP
+if "%iptool%"== "3" goto web MAC
+if "%iptool%"== "4" goto web tracker
+if "%iptool%"== "5" goto ip tracker
 cls
 ipconfig
 pause
 goto inicio
-:webIP
+:web IP
 cls
 echo ejemplo
 echo nslookup www.google.com
@@ -62,9 +66,21 @@ cls
 %ejecutar%
 pause
 goto inicio
-:webmac
+:web MAC
 cls
 getmac
+pause
+goto inicio
+:web tracker
+cls
+set /p track=introduce el enlace=
+goto track
+:ip tracker
+cls
+set /p track= introduce la direccion IP=
+goto tracker
+:tracker
+start https://www.elhacker.net/geolocalizacion.html?host=%track%
 pause
 goto inicio
 
