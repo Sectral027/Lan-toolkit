@@ -1,6 +1,7 @@
 @echo off
 color 0a
 :inicio
+title web hacktools v1.9
 cls
 echo ==========================
 echo =          menu          =
@@ -8,7 +9,7 @@ echo ==========================
 echo 1 desconectar de red
 echo 2 conectar a red
 echo 3 herramientas de IP y MAC
-echo 4 ping
+echo 4 ping y perdida de paquetes
 echo 5 traceroute
 echo 6 correo electronico falso
 echo 7 salir
@@ -25,24 +26,29 @@ if "%accion%"== "6" goto no lista
 if "%accion%"== "8" goto novedades
 exit
 :1
+title desconectando
 cls
 echo desconectando
 ipconfig /release
+title desconectado con exito
 echo desconectado con exito
 pause
 goto inicio
 
 
 :2
+title reconectando
 cls
 echo reconectando
 ipconfig /renew
+title reconectado con exito
 echo reconectado con exito
 pause
 goto inicio
 
 
 :3
+title herramientas ip y mac
 cls
 echo ============================
 echo 1 ver mi IP
@@ -53,14 +59,16 @@ echo 5 rastrear direccion IP
 echo ============================
 set /p iptool=selecciona herramienta=
 if "%iptool%"== "2" goto webip
-if "%iptool%"== "3" goto webmac
+if "%iptool%"== "3" goto mimac
 if "%iptool%"== "4" goto web tracker
 if "%iptool%"== "5" goto ip tracker
+title ver mi ip
 cls
 ipconfig
 pause
 goto inicio
 :webip
+title ip search
 cls
 echo ejemplo
 echo nslookup www.google.com
@@ -69,16 +77,19 @@ cls
 %ejecutar%
 pause
 goto inicio
-:webmac
+:mimac
+title ver mi mac
 cls
 getmac
 pause
 goto inicio
 :web tracker
+title localizador de url
 cls
 set /p track=introduce el enlace=
 goto track
 :ip tracker
+title localizador de ip
 cls
 set /p track= introduce la direccion IP=
 goto tracker
@@ -88,6 +99,7 @@ pause
 goto inicio
 
 :4
+title latencia y perdida de paquetes
 cls
 echo ejemplo
 echo ping 192.168.1.1
@@ -98,6 +110,7 @@ pause
 goto inicio
 
 :5
+title trazado de ruta
 cls
 echo ejemplos
 echo tracert 192.168.1.1
@@ -109,6 +122,7 @@ pause
 goto inicio
 
 :no lista
+title :(
 cls
 echo esta funcion aun no esta disponible,
 echo consigue una version superior para
@@ -117,14 +131,14 @@ pause
 goto inicio
 
 :novedades
+title novedades
 cls
 echo =======================
-echo      novedades v 1.8
+echo      novedades v 1.9
 echo =======================
-echo Se ha añadido este menu
-echo y se ha solucionado un
-echo error del menu de 
-echo herramientas de IP y MAC
+echo Ahora el titulo va
+echo junto con la seccion
+echo del programa
 echo =======================
 pause
 goto inicio
